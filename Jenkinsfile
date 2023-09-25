@@ -1,13 +1,3 @@
-Complete CICD pipeline
-go to vim /etc/sudoers
-
-add this line
-
-Jenkins ALL=NOPASSWD: ALL
-
-Change permissions for jenkins to run docker commands:
-chmod 777 /var/run/docker.sock
-
 pipeline{
     tools{
         maven 'maven3.9'
