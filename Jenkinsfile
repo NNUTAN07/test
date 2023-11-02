@@ -9,11 +9,14 @@ pipeline{
 
     stages{
 
-      stage('1.CloneRepo){
-         steps{
-            git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+       stage('1.CloneRepo')
+        {
+           
+            steps{
+                git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
             }
-             }
+        }
+
 
       stage('2.Build the code){
          steps{
