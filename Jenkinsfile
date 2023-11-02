@@ -6,7 +6,7 @@ pipeline{
 agent any
 
 stages{
-  stage(1.Clonetherepo){
+  stage(1.Clone the repo){
      steps{
         git 'https://github.com/Sonal0409/DevOpsClassCodes.git'
      }
