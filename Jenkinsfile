@@ -19,6 +19,6 @@ pipeline{
          steps{
             sh 'clean install -P metrics pmd:pmd'
             }
-      } 
+        } 
   }
 }
