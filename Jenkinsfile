@@ -11,4 +11,6 @@ stages{
         git 'https://github.com/Sonal0409/DevOpsClassCodes.git'
      }
   }
+}
+}
 	     
