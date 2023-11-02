@@ -13,7 +13,7 @@ stages{
   }
   stage('2.build the code'){
      steps{
-	sh 'clean install -P metrics pmd:pmd'
+	sh 'mvnclean install -P metrics pmd:pmd'
      }
   }
 }
