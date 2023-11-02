@@ -1,34 +1,22 @@
 pipeline{
+
     tools{
-        maven 'maven3.9'
+       maven 'maven3.9'
+       jdk 'java11'
     }
+ 
     agent any
+
     stages{
-        stage('clone repo'){
-            steps{
-                git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+
+      stage('1.CloneRepo){
+         steps{
+            git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
             }
-        }
-        stage('build the code'){
-            steps{
-                sh 'mvn clean install package'
-                
-            }
-        }
-        
-        stage('Build Image'){
-            steps{
-               sh 'docker build -t myimagejenkins .'
-            }
-        }
-        stage('Push image to dockerhub'){
-            steps{
-                sh 'docker tag myimagejenkins edu123/myimagejenkins:$BUILD_NUMBER'
-                sh 'docker login --username edu123 --password Edureka@123'
-                sh 'docker push edu123/myimagejenkins:$BUILD_NUMBER'
-            }
-        }
-        
-       
-    }
+
+      stage('2.Build the code){
+         steps{
+            sh 'clean install -P metrics pmd:pmd'
+            } 
+  }
 }
