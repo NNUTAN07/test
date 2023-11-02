@@ -1,7 +1,7 @@
 pipeline{
 
     tools{
-       maven 'maven3.9'
+       maven 'mymaven'
        jdk 'java11'
     }
  
@@ -9,19 +9,16 @@ pipeline{
 
     stages{
 
-       stage('1.CloneRepo')
-        {
-           
-            steps{
-                git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+      stage('1.CloneRepo){
+         steps{
+            git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
             }
-        }
-
+         }
 
       stage('2.Build the code){
          steps{
             sh 'clean install -P metrics pmd:pmd'
             }
-             }
+      } 
   }
 }
