@@ -1,21 +1,24 @@
 pipeline{
      tools{
-	maven 'maven3.9'
-        jdk 'java11'
+	jdk 'java11'
+	mvn 'maven3.9'
      }
+
 agent any
 
 stages{
-  stage('1.CloneRepo'){
-     steps{
-        git 'https://github.com/Sonal0409/DevOpsClassCodes.git'
-     }
-  }
-  stage('2.build the code'){
-     steps{
-	sh 'mvn clean install -P metrics pmd:pmd'
-     }
-  }
+   stage('1.clone the repo'){
+      steps{
+	 git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+      }
+   }
+
+   stage('2.build the code'){
+      steps{
+         sh 'mvn clean install -P metrics pmd:pmd'
+      }
+   }
 }
 }
+	  
 	     
